@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Codes...</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #loading {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading">Loading codes...</div>
+    <script>
+        const loadingDiv = document.getElementById('loading');
+        const codes = [
+            'Code 1: 0x1A2B3C',
+            'Code 2: 0x4D5E6F',
+            'Code 3: 0x7G8H9I',
+            'Code 4: 0xJ0K1L2',
+            'Code 5: 0xM3N4O5',
+            'Code 6: 0xP6Q7R8',
+        ];
+        
+        let i = 0;
+        const interval = setInterval(() => {
+            if (i < codes.length) {
+                loadingDiv.innerHTML += '<br>' + codes[i];
+                i++;
+            } else {
+                clearInterval(interval);
+                setTimeout(() => {
+                    alert("You're annoying!");
+                }, 1000);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
